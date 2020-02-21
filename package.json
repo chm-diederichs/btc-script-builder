@@ -1,0 +1,18 @@
+{
+  "name": "btc-script-builder",
+  "version": "1.0.0",
+  "description": "Small tool for building bitcoin scripts directly",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "Christophe Diederichs",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.13.0"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "bitcoin-consensus-encoding": "^0.3.4"
+  }
+}
