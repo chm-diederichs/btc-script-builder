@@ -29,35 +29,35 @@ console.log('myScript is ', scriptBuf)
 
 ## API
 
-### `script = new Script()`
+#### `script = new Script()`
 
 Instantiate a new script builder.
 
-### `script.addOp(op)`
+#### `script.addOp(op)`
 
 Push an opcode to the stack. `op` should be passed as a string and *does not* have to be prefixed with 'OP_'.
 
-### `script.addData(data)`
+#### `script.addData(data)`
 
 Push some data onto the stack. `data` may be passed as a hex-encoded string or directly as a `buffer` or `Uint8Array`.
 
-### `script.from(scriptString)`
+#### `script.from(scriptString)`
 
 In many cases, we may wish to simply encode some assembly directly. In this caase, the assembly script may be passed as a `string` and it shall be parsed into a stack.
 
-### `var buf = script.compile([buf, offset])`
+#### `var buf = script.compile([buf, offset])`
 
 Compile the current stack into bytecode in `buf` starting at `offset`. Shall return a new `buffer` if none is provided.
 
-### `script.removeItems(n)` 
+#### `script.removeItems(n)` 
 
 Remove `n` items from the top of the stack. Returns the `script` object.
 
-### `script.clearStack()`
+#### `script.clearStack()`
 
 Empty the current stack.
 
-### `var len = script.encodingLength()`
+#### `var len = script.encodingLength()`
 
 Returns the length of the bytecode corresponding to the current stack.
 
