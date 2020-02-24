@@ -35,7 +35,7 @@ Instantiate a new script builder.
 
 #### `script.addOp(op)`
 
-Push an opcode to the stack. `op` should be passed as a string and *does not* have to be prefixed with 'OP_'.
+Push an opcode to the stack. `op` should be passed as a string and *does not* have to be prefixed with 'OP_'. For `OP_<n>`, with `2 <= n <= 16`, `n` may be passed as a decimal number, string or as the string `PUSHNUM_<n>`.
 
 #### `script.addData(data)`
 
