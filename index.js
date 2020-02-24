@@ -11,6 +11,10 @@ function Script () {
 Script.prototype.addOp = function (op) {
   if (typeof op === 'number') op = op.toString(10)
 
+  // we do not need push opcode since this
+  // is handled by addData method directly.
+  if (op.includes('PUSHBYTES')) return
+
   // to normalise prefixed entries
   if (op.substring(0, 3) === 'OP_') {
     op = op.substring(3)
@@ -21,9 +25,6 @@ Script.prototype.addOp = function (op) {
     op = 'OP_' + op
     this.stack.push(OPS[op])
   } else {
-    // we do not need push opcode since this
-    // is handled by addData method directly.
-    if (op.includes('PUSHBYTES')) return
     throw new Error('opcode not recognised.')
   }
 
@@ -33,6 +34,10 @@ Script.prototype.addOp = function (op) {
 Script.prototype.addData = function (data, addPushCode = true) {
   if (typeof data === 'string') {
     data = Buffer.from(data, 'hex')
+  }
+
+  if(typeof data === 'number') {
+    data = loadNumberAsBufferBE(data)
   }
 
   assert(data instanceof Uint8Array, 'data should be passed as a Buffer, Uint8Array or hex encoded string.')
@@ -140,4 +145,17 @@ function prefixLength (data) {
   }
   
   return [prefix, length]
+}
+
+function loadNumberAsBufferBE (number) {
+  var buf = Buffer.alloc(8)
+  let i = 0
+
+  do {
+    buf[7 - i] = number & 0xff
+    number = number >> 8
+    i++
+  } while (number > 0)
+
+  return buf.slice(8 - i)
 }

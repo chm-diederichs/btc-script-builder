@@ -30,8 +30,13 @@ test('script addOp', function (t) {
   t.end()
 })
 
-test('script addOp', function (t) {
+test('script addData', function (t) {
   var script = new Script()
+
+  script.addData(10003)
+  var data = script.stack.pop()
+  var length = script.stack.pop()
+  t.same(data, Buffer.from(`${(10003).toString(16)}`, 'hex'))
 
   script.addData('deadbeef')
   var data = script.stack.pop()
