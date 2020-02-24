@@ -21,7 +21,10 @@ Script.prototype.addOp = function (op) {
     op = 'OP_' + op
     this.stack.push(OPS[op])
   } else {
-    return new Error('opcode not recognised.')
+    // we do not need push opcode since this
+    // is handled by addData method directly.
+    if (op.includes('PUSHBYTES')) return
+    throw new Error('opcode not recognised.')
   }
 
   return this
@@ -33,6 +36,7 @@ Script.prototype.addData = function (data, addPushCode = true) {
   }
 
   assert(data instanceof Uint8Array, 'data should be passed as a Buffer, Uint8Array or hex encoded string.')
+  assert(data.byteLength, 'cannot encode zero length data')
 
   const [prefix, length] = prefixLength(data)
 
@@ -46,8 +50,9 @@ Script.prototype.addData = function (data, addPushCode = true) {
 Script.prototype.from = function (scriptString) {
   var input = scriptString.split(' ')
 
+  assert(scriptString.length, 'cannot parse empty script')
+
   for (let item of input) {
-    if (item )
     if (item.substring(0, 3) === 'OP_') {
       this.addOp(item)
     } else {
@@ -61,6 +66,9 @@ Script.prototype.from = function (scriptString) {
 Script.prototype.compile = function (buf, offset) {
   if (!buf) buf = Buffer.alloc(this.encodingLength())
   if (!offset) offset = 0
+  const startIndex = offset
+
+  assert(this.stack.length, 'cannot compile empty script')
 
   for (let item of this.stack) {
     if (item instanceof Uint8Array) {
@@ -72,6 +80,7 @@ Script.prototype.compile = function (buf, offset) {
     }
   }
 
+  this.compile.bytes = offset - startIndex
   return buf
 }
 

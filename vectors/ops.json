@@ -1,0 +1,538 @@
+[
+  {
+    "ops": ["OP_FALSE", "FALSE"],
+    "expected": 0
+  },
+  {
+    "ops": ["OP_0", "0", 0],
+    "expected": 0
+  },
+  {
+    "ops": ["OP_PUSHDATA1", "PUSHDATA1"],
+    "expected": 76
+  },
+  {
+    "ops": ["OP_PUSHDATA2", "PUSHDATA2"],
+    "expected": 77
+  },
+  {
+    "ops": ["OP_PUSHDATA4", "PUSHDATA4"],
+    "expected": 78
+  },
+  {
+    "ops": ["OP_1NEGATE", "1NEGATE"],
+    "expected": 79
+  },
+  {
+    "ops": ["OP_RESERVED", "RESERVED"],
+    "expected": 80
+  },
+  {
+    "ops": ["OP_TRUE", "TRUE"],
+    "expected": 81
+  },
+  {
+    "ops": ["OP_1", "1", 1],
+    "expected": 81
+  },
+  {
+    "ops": ["OP_PUSHNUM_1", "PUSHNUM_1"],
+    "expected": 81
+  },
+  {
+    "ops": ["OP_2", "2", 2],
+    "expected": 82
+  },
+  {
+    "ops": ["OP_PUSHNUM_2", "PUSHNUM_2"],
+    "expected": 82
+  },
+  {
+    "ops": ["OP_3", "3", 3],
+    "expected": 83
+  },
+  {
+    "ops": ["OP_PUSHNUM_3", "PUSHNUM_3"],
+    "expected": 83
+  },
+  {
+    "ops": ["OP_4", "4", 4],
+    "expected": 84
+  },
+  {
+    "ops": ["OP_PUSHNUM_4", "PUSHNUM_4"],
+    "expected": 84
+  },
+  {
+    "ops": ["OP_5", "5", 5],
+    "expected": 85
+  },
+  {
+    "ops": ["OP_PUSHNUM_5", "PUSHNUM_5"],
+    "expected": 85
+  },
+  {
+    "ops": ["OP_6", "6", 6],
+    "expected": 86
+  },
+  {
+    "ops": ["OP_PUSHNUM_6", "PUSHNUM_6"],
+    "expected": 86
+  },
+  {
+    "ops": ["OP_7", "7", 7],
+    "expected": 87
+  },
+  {
+    "ops": ["OP_PUSHNUM_7", "PUSHNUM_7"],
+    "expected": 87
+  },
+  {
+    "ops": ["OP_8", "8", 8],
+    "expected": 88
+  },
+  {
+    "ops": ["OP_PUSHNUM_8", "PUSHNUM_8"],
+    "expected": 88
+  },
+  {
+    "ops": ["OP_9", "9", 9],
+    "expected": 89
+  },
+  {
+    "ops": ["OP_PUSHNUM_9", "PUSHNUM_9"],
+    "expected": 89
+  },
+  {
+    "ops": ["OP_10", "10", 10],
+    "expected": 90
+  },
+  {
+    "ops": ["OP_PUSHNUM_10", "PUSHNUM_10"],
+    "expected": 90
+  },
+  {
+    "ops": ["OP_11", "11", 11],
+    "expected": 91
+  },
+  {
+    "ops": ["OP_PUSHNUM_11", "PUSHNUM_11"],
+    "expected": 91
+  },
+  {
+    "ops": ["OP_12", "12", 12],
+    "expected": 92
+  },
+  {
+    "ops": ["OP_PUSHNUM_12", "PUSHNUM_12"],
+    "expected": 92
+  },
+  {
+    "ops": ["OP_13", "13", 13],
+    "expected": 93
+  },
+  {
+    "ops": ["OP_PUSHNUM_13", "PUSHNUM_13"],
+    "expected": 93
+  },
+  {
+    "ops": ["OP_14", "14", 14],
+    "expected": 94
+  },
+  {
+    "ops": ["OP_PUSHNUM_14", "PUSHNUM_14"],
+    "expected": 94
+  },
+  {
+    "ops": ["OP_15", "15", 15],
+    "expected": 95
+  },
+  {
+    "ops": ["OP_PUSHNUM_15", "PUSHNUM_15"],
+    "expected": 95
+  },
+  {
+    "ops": ["OP_16", "16", 16],
+    "expected": 96
+  },
+  {
+    "ops": ["OP_PUSHNUM_16", "PUSHNUM_16"],
+    "expected": 96
+  },
+  {
+    "ops": ["OP_NOP", "NOP"],
+    "expected": 97
+  },
+  {
+    "ops": ["OP_VER", "VER"],
+    "expected": 98
+  },
+  {
+    "ops": ["OP_IF", "IF"],
+    "expected": 99
+  },
+  {
+    "ops": ["OP_NOTIF", "NOTIF"],
+    "expected": 100
+  },
+  {
+    "ops": ["OP_VERIF", "VERIF"],
+    "expected": 101
+  },
+  {
+    "ops": ["OP_VERNOTIF", "VERNOTIF"],
+    "expected": 102
+  },
+  {
+    "ops": ["OP_ELSE", "ELSE"],
+    "expected": 103
+  },
+  {
+    "ops": ["OP_ENDIF", "ENDIF"],
+    "expected": 104
+  },
+  {
+    "ops": ["OP_VERIFY", "VERIFY"],
+    "expected": 105
+  },
+  {
+    "ops": ["OP_RETURN", "RETURN"],
+    "expected": 106
+  },
+  {
+    "ops": ["OP_TOALTSTACK", "TOALTSTACK"],
+    "expected": 107
+  },
+  {
+    "ops": ["OP_FROMALTSTACK", "FROMALTSTACK"],
+    "expected": 108
+  },
+  {
+    "ops": ["OP_2DROP", "2DROP"],
+    "expected": 109
+  },
+  {
+    "ops": ["OP_2DUP", "2DUP"],
+    "expected": 110
+  },
+  {
+    "ops": ["OP_3DUP", "3DUP"],
+    "expected": 111
+  },
+  {
+    "ops": ["OP_2OVER", "2OVER"],
+    "expected": 112
+  },
+  {
+    "ops": ["OP_2ROT", "2ROT"],
+    "expected": 113
+  },
+  {
+    "ops": ["OP_2SWAP", "2SWAP"],
+    "expected": 114
+  },
+  {
+    "ops": ["OP_IFDUP", "IFDUP"],
+    "expected": 115
+  },
+  {
+    "ops": ["OP_DEPTH", "DEPTH"],
+    "expected": 116
+  },
+  {
+    "ops": ["OP_DROP", "DROP"],
+    "expected": 117
+  },
+  {
+    "ops": ["OP_DUP", "DUP"],
+    "expected": 118
+  },
+  {
+    "ops": ["OP_NIP", "NIP"],
+    "expected": 119
+  },
+  {
+    "ops": ["OP_OVER", "OVER"],
+    "expected": 120
+  },
+  {
+    "ops": ["OP_PICK", "PICK"],
+    "expected": 121
+  },
+  {
+    "ops": ["OP_ROLL", "ROLL"],
+    "expected": 122
+  },
+  {
+    "ops": ["OP_ROT", "ROT"],
+    "expected": 123
+  },
+  {
+    "ops": ["OP_SWAP", "SWAP"],
+    "expected": 124
+  },
+  {
+    "ops": ["OP_TUCK", "TUCK"],
+    "expected": 125
+  },
+  {
+    "ops": ["OP_CAT", "CAT"],
+    "expected": 126
+  },
+  {
+    "ops": ["OP_SUBSTR", "SUBSTR"],
+    "expected": 127
+  },
+  {
+    "ops": ["OP_LEFT", "LEFT"],
+    "expected": 128
+  },
+  {
+    "ops": ["OP_RIGHT", "RIGHT"],
+    "expected": 129
+  },
+  {
+    "ops": ["OP_SIZE", "SIZE"],
+    "expected": 130
+  },
+  {
+    "ops": ["OP_INVERT", "INVERT"],
+    "expected": 131
+  },
+  {
+    "ops": ["OP_AND", "AND"],
+    "expected": 132
+  },
+  {
+    "ops": ["OP_OR", "OR"],
+    "expected": 133
+  },
+  {
+    "ops": ["OP_XOR", "XOR"],
+    "expected": 134
+  },
+  {
+    "ops": ["OP_EQUAL", "EQUAL"],
+    "expected": 135
+  },
+  {
+    "ops": ["OP_EQUALVERIFY", "EQUALVERIFY"],
+    "expected": 136
+  },
+  {
+    "ops": ["OP_RESERVED1", "RESERVED1"],
+    "expected": 137
+  },
+  {
+    "ops": ["OP_RESERVED2", "RESERVED2"],
+    "expected": 138
+  },
+  {
+    "ops": ["OP_1ADD", "1ADD"],
+    "expected": 139
+  },
+  {
+    "ops": ["OP_1SUB", "1SUB"],
+    "expected": 140
+  },
+  {
+    "ops": ["OP_2MUL", "2MUL"],
+    "expected": 141
+  },
+  {
+    "ops": ["OP_2DIV", "2DIV"],
+    "expected": 142
+  },
+  {
+    "ops": ["OP_NEGATE", "NEGATE"],
+    "expected": 143
+  },
+  {
+    "ops": ["OP_ABS", "ABS"],
+    "expected": 144
+  },
+  {
+    "ops": ["OP_NOT", "NOT"],
+    "expected": 145
+  },
+  {
+    "ops": ["OP_0NOTEQUAL", "0NOTEQUAL"],
+    "expected": 146
+  },
+  {
+    "ops": ["OP_ADD", "ADD"],
+    "expected": 147
+  },
+  {
+    "ops": ["OP_SUB", "SUB"],
+    "expected": 148
+  },
+  {
+    "ops": ["OP_MUL", "MUL"],
+    "expected": 149
+  },
+  {
+    "ops": ["OP_DIV", "DIV"],
+    "expected": 150
+  },
+  {
+    "ops": ["OP_MOD", "MOD"],
+    "expected": 151
+  },
+  {
+    "ops": ["OP_LSHIFT", "LSHIFT"],
+    "expected": 152
+  },
+  {
+    "ops": ["OP_RSHIFT", "RSHIFT"],
+    "expected": 153
+  },
+  {
+    "ops": ["OP_BOOLAND", "BOOLAND"],
+    "expected": 154
+  },
+  {
+    "ops": ["OP_BOOLOR", "BOOLOR"],
+    "expected": 155
+  },
+  {
+    "ops": ["OP_NUMEQUAL", "NUMEQUAL"],
+    "expected": 156
+  },
+  {
+    "ops": ["OP_NUMEQUALVERIFY", "NUMEQUALVERIFY"],
+    "expected": 157
+  },
+  {
+    "ops": ["OP_NUMNOTEQUAL", "NUMNOTEQUAL"],
+    "expected": 158
+  },
+  {
+    "ops": ["OP_LESSTHAN", "LESSTHAN"],
+    "expected": 159
+  },
+  {
+    "ops": ["OP_GREATERTHAN", "GREATERTHAN"],
+    "expected": 160
+  },
+  {
+    "ops": ["OP_LESSTHANOREQUAL", "LESSTHANOREQUAL"],
+    "expected": 161
+  },
+  {
+    "ops": ["OP_GREATERTHANOREQUAL", "GREATERTHANOREQUAL"],
+    "expected": 162
+  },
+  {
+    "ops": ["OP_MIN", "MIN"],
+    "expected": 163
+  },
+  {
+    "ops": ["OP_MAX", "MAX"],
+    "expected": 164
+  },
+  {
+    "ops": ["OP_WITHIN", "WITHIN"],
+    "expected": 165
+  },
+  {
+    "ops": ["OP_RIPEMD160", "RIPEMD160"],
+    "expected": 166
+  },
+  {
+    "ops": ["OP_SHA1", "SHA1"],
+    "expected": 167
+  },
+  {
+    "ops": ["OP_SHA256", "SHA256"],
+    "expected": 168
+  },
+  {
+    "ops": ["OP_HASH160", "HASH160"],
+    "expected": 169
+  },
+  {
+    "ops": ["OP_HASH256", "HASH256"],
+    "expected": 170
+  },
+  {
+    "ops": ["OP_CODESEPARATOR", "CODESEPARATOR"],
+    "expected": 171
+  },
+  {
+    "ops": ["OP_CHECKSIG", "CHECKSIG"],
+    "expected": 172
+  },
+  {
+    "ops": ["OP_CHECKSIGVERIFY", "CHECKSIGVERIFY"],
+    "expected": 173
+  },
+  {
+    "ops": ["OP_CHECKMULTISIG", "CHECKMULTISIG"],
+    "expected": 174
+  },
+  {
+    "ops": ["OP_CHECKMULTISIGVERIFY", "CHECKMULTISIGVERIFY"],
+    "expected": 175
+  },
+  {
+    "ops": ["OP_NOP1", "NOP1"],
+    "expected": 176
+  },
+  {
+    "ops": ["OP_CHECKLOCKTIMEVERIFY", "CHECKLOCKTIMEVERIFY"],
+    "expected": 177
+  },
+  {
+    "ops": ["OP_CLTV", "CLTV"],
+    "expected": 177
+  },
+  {
+    "ops": ["OP_CHECKSEQUENCEVERIFY", "CHECKSEQUENCEVERIFY"],
+    "expected": 178
+  },
+  {
+    "ops": ["OP_CSV", "CSV"],
+    "expected": 178
+  },
+  {
+    "ops": ["OP_NOP4", "NOP4"],
+    "expected": 179
+  },
+  {
+    "ops": ["OP_NOP5", "NOP5"],
+    "expected": 180
+  },
+  {
+    "ops": ["OP_NOP6", "NOP6"],
+    "expected": 181
+  },
+  {
+    "ops": ["OP_NOP7", "NOP7"],
+    "expected": 182
+  },
+  {
+    "ops": ["OP_NOP8", "NOP8"],
+    "expected": 183
+  },
+  {
+    "ops": ["OP_NOP9", "NOP9"],
+    "expected": 184
+  },
+  {
+    "ops": ["OP_NOP10", "NOP10"],
+    "expected": 185
+  },
+  {
+    "ops": ["OP_PUBKEYHASH", "PUBKEYHASH"],
+    "expected": 253
+  },
+  {
+    "ops": ["OP_PUBKEY", "PUBKEY"],
+    "expected": 254
+  },
+  {
+    "ops": ["OP_INVALIDOPCODE", "INVALIDOPCODE"],
+    "expected": 255
+  }
+]
