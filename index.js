@@ -31,6 +31,10 @@ Script.prototype.addOp = function (op) {
   return this
 }
 
+Script.prototype.addOps = function (...ops) {
+  for (let op of ops) this.addOp(op)
+}
+
 Script.prototype.addData = function (data, addPushCode = true) {
   if (typeof data === 'string') {
     data = Buffer.from(data, 'hex')
@@ -50,6 +54,12 @@ Script.prototype.addData = function (data, addPushCode = true) {
   this.stack.push(data)
 
   return this
+}
+
+Script.prototype.addByte(byte) {
+  assert(typeof byte === 'number', 'Can only push numbers onto the stack')
+  assert(byte <= 0xff, 'Can only push a single byte onto the stack')
+  this.stack.push(byte)
 }
 
 Script.prototype.from = function (scriptString) {

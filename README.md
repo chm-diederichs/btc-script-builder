@@ -37,9 +37,17 @@ Instantiate a new script builder.
 
 Push an opcode to the stack. `op` should be passed as a string and *does not* have to be prefixed with 'OP_'. For `OP_<n>`, with `2 <= n <= 16`, `n` may be passed as a decimal number, string or as the string `PUSHNUM_<n>`.
 
+#### `script.addOps(...ops)`
+
+Push an array of opcodes to the stack.
+
 #### `script.addData(data)`
 
 Push some data onto the stack. `data` may be passed as a hex-encoded string or directly as a `buffer` or `Uint8Array`.
+
+#### `script.addByte(byte)`
+
+Push a single byte to the stack.
 
 #### `script.from(scriptString)`
 
