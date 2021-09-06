@@ -65,6 +65,22 @@ Script.prototype.addByte = function (byte) {
   return this
 }
 
+Script.prototype.addNumber = function (number) {
+  if (number === 0) this.stack.push(0)
+  if (number >= 1 && number <= 16) this.stack.push(num & 0x50)
+  if (number > 16) this.addData(encode(number))
+
+  return this
+
+  function encode (number) {
+    const buf = int.encode(number)
+    let end
+    for (let i = 0; i < buf.length;) if (buf[i++]) end = i
+    console.log(end)
+    return buf.slice(0, end)
+  }
+}
+
 Script.prototype.from = function (scriptString) {
   var input = scriptString.split(' ')
 

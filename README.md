@@ -49,6 +49,10 @@ Push some data onto the stack. `data` may be passed as a hex-encoded string or d
 
 Push a single byte to the stack.
 
+#### `script.addNumber(number)`
+
+Push a number to the stack in a Bitcoin compliant manner.
+
 #### `script.from(scriptString)`
 
 In many cases, we may wish to simply encode some assembly directly. In this caase, the assembly script may be passed as a `string` and it shall be parsed into a stack.
