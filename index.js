@@ -41,7 +41,7 @@ Script.prototype.addData = function (data, addPushCode = true) {
   }
 
   if(typeof data === 'number') {
-    data = loadNumberAsBufferBE(data)
+    data = int.encode(data, null, null, 16)
   }
 
   assert(data instanceof Uint8Array, 'data should be passed as a Buffer, Uint8Array or hex encoded string.')
@@ -77,7 +77,7 @@ Script.prototype.from = function (scriptString) {
 
   return this
 }
-  
+
 Script.prototype.compile = function (buf, offset) {
   if (!buf) buf = Buffer.alloc(this.encodingLength())
   if (!offset) offset = 0
@@ -105,7 +105,7 @@ Script.prototype.removeItems = function (n) {
   }
 
   return this
-} 
+}
 
 Script.prototype.clearStack = function () {
   this.stack = []
@@ -155,17 +155,4 @@ function prefixLength (data) {
   }
   
   return [prefix, length]
-}
-
-function loadNumberAsBufferBE (number) {
-  var buf = Buffer.alloc(8)
-  let i = 0
-
-  do {
-    buf[7 - i] = number & 0xff
-    number = number >> 8
-    i++
-  } while (number > 0)
-
-  return buf.slice(8 - i)
 }

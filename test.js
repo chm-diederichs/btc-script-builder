@@ -36,7 +36,7 @@ test('script addData', function (t) {
   script.addData(10003)
   var data = script.stack.pop()
   var length = script.stack.pop()
-  t.same(data, Buffer.from(`${(10003).toString(16)}`, 'hex'))
+  t.same(data, Buffer.from(`1327`, 'hex'))
 
   script.addData('deadbeef')
   var data = script.stack.pop()
