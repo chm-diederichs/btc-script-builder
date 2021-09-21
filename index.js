@@ -67,7 +67,7 @@ Script.prototype.addByte = function (byte) {
 
 Script.prototype.addNumber = function (number) {
   if (number === 0) this.stack.push(0)
-  if (number >= 1 && number <= 16) this.stack.push(num & 0x50)
+  if (number >= 1 && number <= 16) this.stack.push(number & 0x50)
   if (number > 16) this.addData(encode(number))
 
   return this
