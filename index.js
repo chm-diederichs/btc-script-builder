@@ -91,8 +91,8 @@ Script.prototype.addNumber = function (number) {
     const buf = int.encode(number)
     let end
     for (let i = 0; i < buf.length;) if (buf[i++]) end = i
-    console.log(end)
-    return buf.slice(0, end)
+    if (number < 0 || !(buf[end - 1] & 0x80)) return buf.slice(0, end)
+    return Buffer.concat([buf.slice(0, end), Buffer.alloc(1)])
   }
 }
 
