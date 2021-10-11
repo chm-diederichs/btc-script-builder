@@ -8,6 +8,21 @@ function Script () {
   this.stack = []
 }
 
+Script.opcodeFor = function (op) {
+  // to normalise prefixed entries
+  if (op.substring(0, 3) === 'OP_') {
+    op = op.substring(3)
+  }
+
+  // replace OP strings with hex code
+  if (OPS.hasOwnProperty('OP_' + op)) {
+    op = 'OP_' + op
+    return OPS[op]
+  } else {
+    throw new Error('opcode not recognised.')
+  }
+}
+
 Script.prototype.addOp = function (op) {
   if (typeof op === 'number') op = op.toString(10)
 
